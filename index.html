@@ -1,73 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Ishab Acharya"/>
+    <meta name="description" content="this is portfolio website"/>
+    <meta name="viewport" content="width=device-width,initial"/> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="day3.css">
-
+    <link rel="shortcut icon" href="data:image/png;base64,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">
+    <title> hello dude</title>
 </head>
 <body>
-    <div class="qwe">
-        <nav>
-            <h2 class="logo">Portfo<span>lio</span></h2>
-         
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Contact Us</a></li>
-         </ul>
-        <a href="#" class="btn">Suscribe</a>
+    <h1>It is just an example</h1>
+    <div>
+        <p>
+            Lorem <i>ipsum dolor </i> sit amet <b>consectetur </b> adipisicing elit. Voluptatum consequuntur <em> consequatur </em> architecto neque. Quae facilis <strong>voluptate illo numquam </strong>
+            magni ut qui, quos fugiat alias dolores enim totam! Sunt, inventore consectetur.
+        </p>
 
-       </nav>
-       <div class="content">
-        <div class="content-container1">
+    </div>
+    <br>
+    <a href="https://www.netflix.com/browse" target="_blank" > Netflix</a>
+    <br>
+    <br>
+    <a href="https://www.youtube.com/" target="_self"> Youtube</a>
+    <br>
+    <br>
 
-            <h4 class="text1">Hello, My name is </h4>
-            <h1 class="text2">Munna <span>Jaiswal</span></h1>
-            <h3 class="text3">I'm a Software Developer</h3>
-            <div class="newslatter">
-                <form>
-                    <input type="email" name="email" id="mail" placeholder="Enter your email"> 
-                     <input type="Submit" name="submit" value="Let's Start">
-                     
-                     
-                    </form>
-                </div> 
-            </div>
-            
-            <div id="code">
-                <img src="20210624051726_IMG_8812.JPG" alt="photo" class="profile-photo" > 
-            </div> 
-            <input type="button" class="button" value="let's go" onclick="call()">
-            
-            
-            
-        </div>
-        
-    </div> 
-    <script src="class2.js"></script>              
+    <span>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, ipsa nam voluptatum nihil sed aut laboriosam accusamus cupiditate eveniet debitis, deleniti itaque reprehenderit! Velit quam magnam totam. Eum, natus necessitatibus.
+    </span>
+
+
+    <img src="https://images.unsplash.com/photo-1587402092301-725e37c70fd8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zmx1ZmZ5JTIwZG9nfGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="bibek" height="400px" width="350px"/>
     
+
+    <table border="5px">
+        <tr>
+            <th>Roll</th>
+            <th>Name</th>
+            <th>Faculty</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <th>Ram</th>
+            <th>SE</th>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>Shyam</th>
+            <th>Civil</th>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>Hari</th>
+            <th>CS</th>
+        </tr>
+    </table>
+
+    <br>
+    <br>
+    <br>
+
+    <ol>
+        <li>Munna</li>
+        <li>Bibek</li>
+        <li>Rakesh</li>
+        <li>unique</li>
+    </ol>
+    <hr>
+    <ol type="1">
+        <li>Munna</li>
+        <li>Bibek</li>
+        <li>Rakesh</li>
+        <li>unique</li>
+    </ol>
+    <hr>
+    <ol type="I">
+        <li>Munna</li>
+        <li>Bibek</li>
+        <li>Rakesh</li>
+        <li>unique</li>
+    </ol>
+    <hr>
+    <ol type="i">
+        <li>Munna</li>
+        <li>Bibek</li>
+        <li>Rakesh</li>
+        <li>unique</li>
+    </ol>
+    <hr>
+    <ol type="A">
+        <li>Munna</li>
+        <li>Bibek</li>
+        <li>Rakesh</li>
+        <li>unique</li>
+    </ol>
+    <hr>
+    <ol type="a">
+        <li>Munna</li>
+        <li>Bibek</li>
+        <li>Rakesh</li>
+        <li>unique</li>
+    </ol>
+    <hr><hr><hr><hr><hr>
+
+    <ul type="none">
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Hot Lemon</li>
+    </ul>
+    <hr>
+    <ul type="square">
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Hot Lemon</li>
+    </ul>
+    <hr>
+    <ul type="rectangle">
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Hot Lemon</li>
+    </ul>
+    <hr>
+    <ul type="circle">
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Hot Lemon</li>
+    </ul>
+    <hr>
+    <ul type="bullet">
+        <li>Tea</li>
+        <li>Coffee</li>
+        <li>Hot Lemon</li>
+    </ul>
+    <hr>
+
+<div>
+    <form action="">
+        <label>Name:</label>
+        <input type="text" placeholder="enter your name"/>
+        <br>
+        <label>Password:</label>
+        <input type="password" placeholder="enter your password" />
+        <br>
+        <input type="radio" checked="true" />
+        <input type="radio" checked="true" />
+        <br>
+        <input type="checkbox" checked="true" />
+        <br>
+        <input type="button" value="Submit"/>
+        
+
+        
+    </form>
+    <form>
+        <label for="fname" >First name:</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter your first name"  ><br>
+        <label for="lname" >Last name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter your last name">
+      </form>
+</div>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
